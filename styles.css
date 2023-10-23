@@ -1,0 +1,281 @@
+@font-face {
+    font-family: "Inter";
+    src: url(assets/fonts/Inter-VariableFont_slnt\,wght.ttf);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    font-family: "Inter";
+}
+
+main {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+    & .section-header {
+        height: 25%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        position: relative;
+        color: white;
+
+        & .header-bg-img {
+            position: absolute;
+            background-image: url('https://images.unsplash.com/photo-1628432136678-43ff9be34064?auto=format&fit=crop&q=80&w=963&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position-y: -100px;
+            background-color: rgb(97, 97, 97);
+            background-blend-mode: multiply;
+            z-index: -1;
+        }
+
+        & h1, h4 {
+            margin: 0;
+        }
+
+        & h1 { font-size: 7vw; font-weight: 800; }
+        & h4 { font-size: 2vw; }
+
+        & .search-bar {
+            background-color: #ffffff;
+            border: 1px solid #d1d5db;
+            position: absolute;
+            bottom: -1em;
+            left: auto;
+            width: 85%;
+            height: 2em;
+            border-radius: 6px;
+            color: #232323;
+            display: flex;
+            align-items: center;
+            gap: 0.5em;
+
+            & i {
+                color: #9ca3af;
+                margin-left: 1em;
+            }
+
+            & input {
+                color: #6b7280;
+                font-family: inherit;
+                border: none;
+                font-weight: 500;
+                align-self: stretch;
+                width: 100%;
+            }
+
+            & input::placeholder {
+                color: #6b7280;
+            }
+
+            & input:focus {
+                outline: none;
+            }
+
+            & .btn-search {
+                font-family: inherit;
+                font-weight: 600;
+                align-self:stretch;
+                padding: 0 2em;
+                border-radius: 6px;
+                border-top-left-radius: 0;
+                border-bottom-left-radius: 0;
+                border-left: 1px solid #d1d5db;
+                border-top: 0;
+                border-right: 0;
+                border-bottom: 0;
+                color: #374151;
+                margin: 0 0 0 auto;
+                cursor: pointer;
+                background-color: #f9fafb;
+            }
+
+            & .btn-search:active {
+                background-color: #dadada;
+            }
+
+        }
+    }
+
+    & .section-main {
+        height: 75%;
+        gap: 1em;
+        color: #232323;
+
+        & h3, h5 {
+            margin: 0;
+        }
+
+        & .films {
+            width: 85%;
+            margin: 3em auto;
+
+            & .film {
+                display: flex;
+                gap: 1em;
+                margin-top: 1.5em;
+                padding-bottom: 1.5em;
+                border-bottom: 1px solid rgb(216, 216, 216);
+
+                & h3 {
+                    font-size: 4vw;
+                }
+
+                & h5 {
+                    font-size: 1.8vw;
+                }
+
+                & .poster {
+
+                    & img {
+                        width: 17vw;
+                        display: block;
+                    }
+                }
+
+                & .info {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.7em;
+                    justify-content: center;
+
+                    & i {
+                        margin-right: 0.3em;
+                    }
+
+                    & .info-1 {
+                        display: flex;
+                        gap: 1em;
+                        align-items: center;
+
+                        & i {
+                            color: #fec654;
+                        }
+                    }
+
+                    & .info-2 {
+                        display: flex;
+                        gap: 1em;
+                        align-items: center;
+
+                        & .btn-watchlist {
+                            font-size: 1.8vw;
+                            font-family: inherit;
+                            font-weight: 600;
+                            background-color: transparent;
+                            border: none;
+                            cursor: pointer;
+                        }
+
+                        & .btn-watchlist:active {
+                            color: #646464;
+                        }
+                    }
+
+                    & .plot {
+                        margin: 0;
+                        color: #727272;
+                        font-size: 2.4vw;
+                    }
+
+                }
+            }
+
+            & .empty-catalog {
+                height: 50vh;
+                color: rgb(207, 207, 207);
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+    }
+}
+
+@media (min-width: 850px) {
+
+    main {
+        flex-direction: row;
+        position: relative;
+
+        & .section-header {
+            height: 100vh;
+            width: 50%;
+            flex-direction: column;
+            justify-content: center;
+            gap: 1em;
+            position: fixed;
+
+            & .header-bg-img {
+                background-position-y: 0;
+            }
+
+            & h1 {
+                font-size: 5vw;
+            }
+
+            & h4 {
+                font-size: 1vw;
+                margin-top: 4em;
+            }
+
+            & .search-bar {
+                position: relative;
+                width: 60%;
+            }
+        }
+
+        & .section-main {
+            height: 100vh;
+            width: 50%;
+            margin: 0 0 0 auto;
+
+            & .films {
+
+                & .film {
+
+                    & h3 {
+                        font-size: 1.5vw;
+                    }
+
+                    & h5 {
+                        font-size: 0.7vw;
+                    }
+
+                    & .poster {
+
+                        & img {
+                            width: 6vw;
+                        }
+                    }
+
+                    & .info {
+    
+                        & .info-2 {
+    
+                            & .btn-watchlist {
+                                font-size: 0.7vw;
+                            }
+                        }
+    
+                        & .plot {
+                            font-size: 1.1vw;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+}
